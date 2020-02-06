@@ -4,6 +4,7 @@ let foods = []
 let amount = 100     //amount of food generated at once
 function setup() {
     createCanvas(innerWidth, innerHeight);
+    frameRate(60);
     player = new Player(
         width / 2,
         height / 2,
