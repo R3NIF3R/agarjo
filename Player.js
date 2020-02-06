@@ -1,4 +1,4 @@
-class Blob {
+class Player {
     constructor(x, y, score, r, g, b) {
         this.pos = createVector(x, y);
         this.score = score;

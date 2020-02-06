@@ -4,7 +4,7 @@ let foods = []
 let amount = 10     //amount of food generated at once
 function setup() {
     createCanvas(innerWidth, innerHeight);
-    player = new Blob(
+    player = new Player(
         width / 2,
         height / 2,
         10000,              //mass / score whatever rly
