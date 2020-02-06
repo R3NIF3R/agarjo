@@ -7,8 +7,8 @@ class Blob {
         this.blue = b;
     }
     update() {
-
         translate(this.pos.x, this.pos.y);
+
     }
     show() {
         stroke(this.red + 50, this.green + 50, this.blue + 50);
