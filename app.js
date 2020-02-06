@@ -1,7 +1,7 @@
 let player
 let border
 let foods = []
-let amount = 10     //amount of food generated at once
+let amount = 100     //amount of food generated at once
 function setup() {
     createCanvas(innerWidth, innerHeight);
     player = new Player(
@@ -14,8 +14,8 @@ function setup() {
     );
     for (let i = 0; i < amount; i++) {
         foods[i] = new Food(
-            random(width),
-            random(height),
+            random(-width + 5, 2 * width - 5),
+            random(-height + 5, 2 * height - 5),
             1000,           //mass / score whatever rly
             100,            //red value
             10,             //green value
@@ -28,6 +28,7 @@ function setup() {
 }
 function draw() {
     background(0)
+    //scale(2 + 1 / (player.score / 1000))
     //all shit regarding drawing food
     for (let i = 0; i < foods.length; i++) {
         foods[i].update(player)
@@ -36,13 +37,15 @@ function draw() {
     //all shit regarding drawing player
     push()
     for (let i = 0; i < foods.length; i++) {
-        player.update(foods[i]);
+        player.update(foods[i], border);
     }
     player.show();
     pop()
     textSize(40)
     stroke(255)
+    fill(255)
     text(player.score, width - 200, 40)         //displaying score
     text(player.r, width - 200, 80)             //displaying radius (debugging purposes)
+    border.update(player)
     border.show()
 }

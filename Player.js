@@ -7,10 +7,10 @@ class Player {
         this.green = g;
         this.blue = b;
     }
-    update(other) {
+    update(other, another) {
         if (dist(this.pos.x, this.pos.y, other.pos.x, other.pos.y) < 0.9 * (this.r + other.r)) {
             this.score += other.size;
-            other.randomizePos();
+            other.randomizePos(another);
         }
         this.r = sqrt(this.score / PI);
     }

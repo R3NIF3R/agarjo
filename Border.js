@@ -11,10 +11,13 @@ class Border {
         line(this.rd.x, this.rd.y, this.ru.x, this.ru.y)
         line(this.lu.x, this.lu.y, this.ru.x, this.ru.y)
     }
-    update() {
-        let move = createVector(-(mouseX - width / 2), -(mouseY - height / 2))         //creating new vector pointing from
-        move.normalize()                                                               //the middle of the screen towards
-        move = p5.Vector.mult(move, 1000 / sqrt(other.score))                          //the mouse but it's length is set
-        this.lu.add(move)                                                             //to 1 and then the food is moved by
+    update(other) {
+        let move = createVector(-(mouseX - width / 2), -(mouseY - height / 2)) //same shit as in food
+        move.normalize()
+        move = p5.Vector.mult(move, 1000 / sqrt(other.score))
+        this.lu.add(move)
+        this.ld.add(move)
+        this.rd.add(move)
+        this.ru.add(move)
     }
 }

@@ -20,7 +20,9 @@ class Food {
         fill(this.red, this.green, this.blue);
         ellipse(this.pos.x, this.pos.y, this.r * 2);
     }
-    randomizePos() {
-        this.pos = createVector(random(width), random(height))
+    randomizePos(other) {
+        this.pos = createVector(
+            random(other.lu.x + 5, other.rd.x - 5),
+            random(other.lu.y + 5, other.rd.y - 5))
     }
 }
