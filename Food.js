@@ -8,10 +8,10 @@ class Food {
         this.r = sqrt(size / PI);
     }
     update(other) {
-        let move = createVector(-(mouseX - width / 2), -(mouseY - height / 2))
-        move.limit(other.r * 1.4)
-        move.mult(3.5 / (other.r * 2.5))
-        this.pos.add(move)
+        //    let move = createVector(-(mouseX - width / 2), -(mouseY - height / 2))
+        //    move.limit(other.r * 1.4)
+        //    move.mult(3.5 / (other.r * 2.5))
+        //    this.pos.add(move)
     }
     show() {
         //   stroke(this.red + 50, this.green + 50, this.blue + 50);
