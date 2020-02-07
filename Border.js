@@ -13,8 +13,8 @@ class Border {
     }
     update(other) {
         let move = createVector(-(mouseX - width / 2), -(mouseY - height / 2)) //same shit as in food
-        move.normalize()
-        move = p5.Vector.mult(move, 1000 / sqrt(other.score))
+        move.limit(other.r * 1.4)
+        move.mult(3.5 / (other.r * 2.5))
         this.lu.add(move)
         this.ld.add(move)
         this.rd.add(move)

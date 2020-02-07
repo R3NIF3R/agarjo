@@ -9,8 +9,8 @@ class Food {
     }
     update(other) {
         let move = createVector(-(mouseX - width / 2), -(mouseY - height / 2))
-        move.limit(other.r*1.4)
-        move.mult(3.5/(other.r*2.5))
+        move.limit(other.r * 1.4)
+        move.mult(3.5 / (other.r * 2.5))
         this.pos.add(move)
     }
     show() {
@@ -22,7 +22,7 @@ class Food {
     }
     randomizePos(other) {
         this.pos = createVector(
-            random(other.lu.x + 5, other.rd.x - 5),
-            random(other.lu.y + 5, other.rd.y - 5))
+            random(other.lu.x + 20, other.rd.x - 20),
+            random(other.lu.y + 20, other.rd.y - 20))
     }
 }
